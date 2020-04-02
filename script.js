@@ -4,7 +4,7 @@ let app = new Vue({
         name: "Calculator",
         numbers: [1,2,3,4,5,6,7,8,9,0,"."],
         operators: ["+","-","/","*","C","="],
-        exp: "",
+        exp: '',
     },
     methods: {
         click: function(n){
@@ -19,8 +19,8 @@ let app = new Vue({
         evaluate: function(e){
             a = 0;
             opr = '+';
-            this.exp = this.exp.split(/([^1234567890.])/g);
-          // return console.log(this.exp);
+            this.exp = this.exp.split(/([^1234567890.])/g).filter(Boolean);
+           //return console.log(this.exp);
             for (let i = 0; i < this.exp.length; i++){
                 b = 0;
                 if (this.exp[i].match(/([^1234567890.])/)){
